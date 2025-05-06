@@ -1,19 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+// import Quiz from './Dashboard/Quiz';
 
 const EarnBadgePage = () => {
-    //   const navigate = useNavigate();
+      const navigate = useNavigate();
 
-    const courses = [
-        { id: 1, name: 'React', color: 'bg-blue-100' },
-        { id: 2, name: 'Python', color: 'bg-yellow-100' },
-        { id: 3, name: 'JavaScript', color: 'bg-green-100' },
-        { id: 4, name: 'UI/UX Design', color: 'bg-pink-100' },
+      const courses = [
+        { id: 1, name: 'React', slug: 'react', color: 'bg-blue-100' },
+        { id: 2, name: 'Python', slug: 'python', color: 'bg-yellow-100' },
+        { id: 3, name: 'JavaScript', slug: 'javascript', color: 'bg-green-100' },
+        { id: 4, name: 'UI/UX', slug: 'ui-ux', color: 'bg-pink-100' },
     ];
+    
 
-    const handleCourseClick = (courseName) => {
-        // Replace with real route or logic
-        // navigate(`/quiz/${courseName.toLowerCase()}`);
+    const handleCourseClick = (slug) => {
+        navigate(`/quiz/${slug}`);
         console.log("HELLO")
     };
 
@@ -27,7 +28,7 @@ const EarnBadgePage = () => {
                     <div
                         key={course.id}
                         className={`cursor-pointer p-6 rounded-lg shadow hover:shadow-lg transition ${course.color}`}
-                        onClick={() => handleCourseClick(course.name)}
+                        onClick={() => handleCourseClick(course.slug)}
                     >
                         <h2 className="text-xl font-semibold text-gray-800">{course.name}</h2>
                         <p className="text-sm text-gray-600 mt-2">Click to start the quiz</p>
