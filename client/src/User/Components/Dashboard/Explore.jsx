@@ -2,35 +2,35 @@ import React from 'react';
 import HomeCards from '../../Pages/HomeCards';
 import explore from '../../assets/HomeImage.avif';
 
-// Functional card data model
+// Functional card data model (button text added)
 const GuidanceCards = [
   {
     id: 1,
-    title: 'Discover Interests',
-    description: 'Explore categories and take mini quizzes to find what excites you the most.',
-    bgColor: 'bg-[#F0F9FF]',
-    textColor: 'text-blue-600',
+    image: "src/User/assets/Explore.avif",
+    title: 'Explore Tech Skills',
+    description: 'Discover in-demand skills like web development, AI, or cloud computing. Learn from real people and stay ahead in tech.',
+    buttonText: 'Explore Now',
   },
   {
     id: 2,
-    title: 'Get Recommendations',
-    description: 'Based on your interests, we’ll suggest trending or high-rated courses and mentors.',
-    bgColor: 'bg-[#FEF9E7]',
-    textColor: 'text-yellow-600',
+    image: "src/User/assets/Connect.avif",
+    title: 'Collaborate with Tech Minds',
+    description: "Team up with tech enthusiasts for coding projects, code reviews, or learning circles. Knowledge grows faster together.",
+    buttonText: 'Connect Now',
   },
   {
     id: 3,
-    title: 'Start Small',
-    description: 'Try out quick 30-minute intro lessons to test your comfort with different skills.',
-    bgColor: 'bg-[#FDF2F8]',
-    textColor: 'text-pink-600',
+    image: "src/User/assets/Profile.avif",
+    title: 'Showcase Your Journey',
+    description: "Earn badges and build your profile by teaching, learning, or mentoring. Highlight your tech path for future opportunities.",
+    buttonText: 'Boost Profile',
   },
 ];
 
 function Explore() {
   return (
     <>
-      <div className="">
+      <div>
         {/* Hero Section */}
         <div className="flex flex-col md:flex-row p-6 justify-center items-center">
           <img src={explore} width={650} alt="Explore" />
@@ -75,10 +75,19 @@ function Explore() {
             {GuidanceCards.map((card) => (
               <div
                 key={card.id}
-                className={`${card.bgColor} p-6 rounded-xl shadow hover:shadow-lg transition duration-300 text-center`}
+                className="p-6 rounded-xl shadow hover:shadow-lg transition duration-300 text-center bg-gray-100"
               >
-                <h3 className={`text-xl font-semibold mb-2 ${card.textColor}`}>{card.title}</h3>
+                
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className=""
+                />
+                <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
                 <p className="text-gray-600">{card.description}</p>
+                <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg mb-2">
+                  {card.buttonText}
+                </button>
               </div>
             ))}
           </div>

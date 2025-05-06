@@ -54,7 +54,7 @@ const DashboardHeader = ({ activeTab, handleTabClick }) => {
             >
               $
             </div>
-            <div className="">Profile</div>
+            <div className="hover:cursor-pointer">Profile</div>
           </div>
         </div>
       </div>
