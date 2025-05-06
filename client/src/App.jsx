@@ -1,16 +1,10 @@
 import React from 'react'
-// import Login from './User/Components/Login'
-import Dashboard from './User/Components/Dashboard'
-import Profile from './User/Components/Profile'
+import UserRoutes from './Routes/UserRoutes'
 
 function App() {
   return (
     <>
-    <Dashboard />
-    {/* <Profile/> */}
-    {/* <DashboardHeader /> */}
-    {/* <Explore /> */}
-
+    <UserRoutes />
     </>
   )
 }
