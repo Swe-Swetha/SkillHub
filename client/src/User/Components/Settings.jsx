@@ -1,11 +1,15 @@
 import React from 'react'
+import settings from "../assets/settings.avif"
 
 function Settings() {
   return (
     <>
     <div className="p-4 md:m-4 bg-gray-200 rounded-lg">
-      <h1 className="text-2xl font-bold mb-2 md:mb-4">Settings</h1>
-      <p className="text-base mb-2 md:mb-4">
+      <div className="flex gap-4">
+      <div className=""><img src={settings} width={400} /></div>
+      <div className="">
+      <h1 className="text-2xl font-bold mb-2 md:mb-2">Settings</h1>
+      <p className="text-base mb-2 md:mb-2">
         Manage your account settings and preferences here.
       </p>
       <div className="md:mt-6">
@@ -16,10 +20,10 @@ function Settings() {
           <p className="text-sm text-black mb-4">
             Permanently delete your account. This action cannot be undone.
           </p>
-          <p className="text-sm text-gray-600 mb-4">
+          {/* <p className="text-sm text-gray-600 mb-4">
             Note: All your data will be erased, and you will lose access to your
             account.
-          </p>
+          </p> */}
           <button className="bg-blue-600 text-white px-4 py-2 rounded-md">
             Delete Account
           </button>
@@ -32,15 +36,17 @@ function Settings() {
           <p className="text-sm text-black mb-4">
             Temporarily deactivate your account. You can reactivate it anytime.
           </p>
-          <p className="text-sm text-gray-600 mb-4">
+          {/* <p className="text-sm text-gray-600 mb-4">
             Note: Your data will remain intact, but you will not be able to use
             your account until reactivated.
-          </p>
+          </p> */}
           <button className="bg-blue-600 text-white px-4 py-2 rounded-md">
             Deactivate Account
           </button>
         </div>
+        </div>
       </div>
+    </div>
     </div>
     </>
   )

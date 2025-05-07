@@ -1,6 +1,8 @@
 import React from 'react';
 import HomeCards from '../../Pages/HomeCards';
 import explore from '../../assets/HomeImage.avif';
+import { useNavigate } from 'react-router-dom';
+
 
 // Functional card data model (button text added)
 const GuidanceCards = [
@@ -28,12 +30,15 @@ const GuidanceCards = [
 ];
 
 function Explore() {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <div>
         {/* Hero Section */}
         <div className="flex flex-col md:flex-row p-6 justify-center">
-          <img src={explore} width={650} alt="Explore" />
+          <img src={explore} width={600} alt="Explore" />
           <div className="text-center md:text-left md:ml-10">
             <div className="mt-10 md:mt-32 font-semibold text-4xl">
               Collaborative Skill Sharing Hub
@@ -64,7 +69,7 @@ function Explore() {
             ))}
           </div>
           <div className="flex justify-end px-48 py-6">
-              <button className=" text-black font-medium hover:underline">
+              <button className=" text-black font-medium hover:underline" onClick={()=>{navigate('/viewMoreCourse')}}>
                 View More Courses
               </button>
               </div>
