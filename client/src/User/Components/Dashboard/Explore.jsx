@@ -32,13 +32,13 @@ function Explore() {
     <>
       <div>
         {/* Hero Section */}
-        <div className="flex flex-col md:flex-row p-6 justify-center items-center">
+        <div className="flex flex-col md:flex-row p-6 justify-center">
           <img src={explore} width={650} alt="Explore" />
           <div className="text-center md:text-left md:ml-10">
             <div className="mt-10 md:mt-32 font-semibold text-4xl">
               Collaborative Skill Sharing Hub
             </div>
-            <div className="text-2xl mt-6 text-gray-500">
+            <div className="text-2xl mt-6 text-gray-500 text-center">
               Teach what you know - Learn what you love
             </div>
           </div>
@@ -46,10 +46,10 @@ function Explore() {
 
         {/* Explore Courses Section */}
         <div className="bg-[#7BD3EA]">
-          <h2 className="text-4xl font-bold text-center pt-6">
+          <h2 className="text-4xl font-bold text-center py-6">
             Explore Courses on your Choice
           </h2>
-          <div className="grid grid-rows-2 grid-cols-5 gap-8 bg-secondary px-48 py-10">
+          <div className="grid grid-rows-2 grid-cols-5 gap-8 bg-secondary px-48">
             {HomeCards.map((item) => (
               <div
                 key={item.id}
@@ -63,6 +63,11 @@ function Explore() {
               </div>
             ))}
           </div>
+          <div className="flex justify-end px-48 py-6">
+              <button className=" text-black font-medium hover:underline">
+                View More Courses
+              </button>
+              </div>
         </div>
 
         {/* Guidance Cards Section */}
