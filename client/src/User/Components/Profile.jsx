@@ -1,68 +1,58 @@
-// import React from 'react';
-
-// const user = {
-//   name: 'Priya Sharma',
-//   location: 'Bangalore, India',
-//   bio: 'Full Stack Developer passionate about sharing tech knowledge and learning UI/UX design.',
-//   skillbucks: 3,
-//   skillsOffered: ['React', 'Node.js', 'MongoDB'],
-//   skillsToLearn: ['Figma', 'Next.js', 'TypeScript'],
-//   badges: [
-//     { name: 'Top Mentor', icon: '/src/User/assets/badges/mentor.png' },
-//     { name: 'UI Explorer', icon: '/src/User/assets/badges/ui.png' },
-//   ],
-//   profileImage: '/src/User/assets/ProfilePic.png'
-// };
+// import React, { useState } from 'react';
 
 // const Profile = () => {
+//   const [profile, setProfile] = useState({
+//     name: 'John Doe',
+//     bio: 'A passionate web developer and skill swapper.',
+//     skillsHave: ['JavaScript', 'React', 'CSS'],
+//     skillsWant: ['Python', 'UI/UX Design'],
+//     points: 120,
+//     profileImage: 'https://via.placeholder.com/150',
+//   });
+
 //   return (
-//     <div className="max-w-4xl mx-auto bg-white shadow-md rounded-xl p-6 mt-10">
-//       {/* Header Section */}
-//       <div className="flex items-center space-x-6">
-//         <img
-//           src={user.profileImage}
-//           alt={user.name}
-//           className="w-24 h-24 rounded-full object-cover border-2 border-primary"
-//         />
-//         <div>
-//           <h2 className="text-2xl font-bold text-gray-800">{user.name}</h2>
-//           <p className="text-gray-500">{user.location}</p>
-//           <p className="mt-2 text-sm text-gray-600">{user.bio}</p>
-//         </div>
-//       </div>
+//     <div className="max-w-4xl mx-auto p-6">
+//       <h1 className="text-3xl font-bold mb-6">My Profile</h1>
 
-//       {/* Skillbucks + Badges */}
-//       <div className="mt-6 flex flex-col md:flex-row justify-between items-center">
-//         <div className="text-xl font-semibold text-secondary mb-4 md:mb-0">
-//           Skillbucks: <span className="text-primary">{user.skillbucks}</span>
+//       <div className="bg-white p-6 rounded-2xl shadow-md border-2 border-black">
+//         {/* Top section: Profile image + name */}
+//         <div className="flex items-center gap-6 mb-6">
+//           <img
+//             src={profile.profileImage}
+//             alt="Profile"
+//             className="w-24 h-24 rounded-full object-cover border border-gray-300"
+//           />
+//           <div>
+//             <h2 className="text-2xl font-semibold">{profile.name}</h2>
+//             <p className="text-gray-600">{profile.bio}</p>
+//           </div>
 //         </div>
-//         <div className="flex space-x-4">
-//           {user.badges.map((badge, idx) => (
-//             <div key={idx} className="flex flex-col items-center">
-//               <img src={badge.icon} alt={badge.name} className="h-10" />
-//               <span className="text-xs mt-1 text-gray-600">{badge.name}</span>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
 
-//       {/* Skills Section */}
-//       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-//         <div>
-//           <h3 className="text-lg font-bold text-gray-700 mb-2">Skills You Offer</h3>
-//           <ul className="list-disc pl-5 text-gray-600">
-//             {user.skillsOffered.map((skill, idx) => (
-//               <li key={idx}>{skill}</li>
-//             ))}
-//           </ul>
+//         {/* Skills Section */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+//           <div>
+//             <h3 className="text-lg font-semibold mb-2">Skills I Have</h3>
+//             <ul className="list-disc list-inside text-gray-700">
+//               {profile.skillsHave.map((skill, idx) => (
+//                 <li key={idx}>{skill}</li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           <div>
+//             <h3 className="text-lg font-semibold mb-2">Skills I Want to Learn</h3>
+//             <ul className="list-disc list-inside text-gray-700">
+//               {profile.skillsWant.map((skill, idx) => (
+//                 <li key={idx}>{skill}</li>
+//               ))}
+//             </ul>
+//           </div>
 //         </div>
-//         <div>
-//           <h3 className="text-lg font-bold text-gray-700 mb-2">Skills You Want to Learn</h3>
-//           <ul className="list-disc pl-5 text-gray-600">
-//             {user.skillsToLearn.map((skill, idx) => (
-//               <li key={idx}>{skill}</li>
-//             ))}
-//           </ul>
+
+//         {/* Points Display */}
+//         <div className="text-right">
+//           <span className="text-sm text-gray-600">Points:</span>
+//           <span className="ml-2 text-xl font-bold text-blue-600">{profile.points}</span>
 //         </div>
 //       </div>
 //     </div>
@@ -72,88 +62,106 @@
 // export default Profile;
 import React, { useState } from 'react';
 
-const user = {
-  name: 'Priya Sharma',
-  location: 'Bangalore, India',
-  bio: 'Full Stack Developer passionate about sharing tech knowledge and learning UI/UX design.',
-  skillbucks: 3,
-  skillsOffered: ['React', 'Node.js', 'MongoDB'],
-  skillsToLearn: ['Figma', 'Next.js', 'TypeScript'],
-  profileImage: '/src/User/assets/ProfilePic.png'
-};
-
 const Profile = () => {
-  const [isEditing, setIsEditing] = useState(false);
+  const [profile] = useState({
+    name: 'Swetha',
+    bio: 'A passionate web developer and skill swapper.',
+    skillsHave: ['JavaScript', 'React', 'CSS'],
+    skillsWant: ['Python', 'UI/UX Design'],
+    points: 120,
+    profileImage: 'src/User/assets/auth.jpeg',
+  });
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl p-8 mt-10">
-      {/* Header Section */}
-      <div className="flex items-center space-x-6">
-        <img
-          src={user.profileImage}
-          alt={user.name}
-          className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-lg"
-        />
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl font-bold text-gray-800">{user.name}</h2>
-          <p className="text-lg text-gray-500 mt-2">{user.location}</p>
-          <p className="mt-4 text-sm text-gray-600">{user.bio}</p>
-        </div>
-      </div>
+    <div className="max-w-5xl mx-auto px-6 py-10">
+      {/* <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-800">
+        My Profile
+      </h1> */}
 
-      {/* Skillbucks Section */}
-      <div className="mt-8 flex justify-between items-center">
-        <div className="text-xl font-semibold text-secondary mb-4 md:mb-0">
-          Skillbucks: <span className="text-primary">{user.skillbucks}</span>
+      <div className=" border border-gray-200 rounded-3xl shadow-xl p-8 ">
+        {/* Profile header */}
+
+        <div className="flex justify-between items-center">
+        <div className="flex items-center gap-8 mb-6">
+          <img
+            src={profile.profileImage}
+            alt="Profile"
+            className="w-32 h-32 rounded-full object-cover border-2 border-black shadow-md"
+          />
+          <div className="text-center md:text-left">
+            <h2 className="text-3xl font-bold text-red-500">{profile.name}</h2>
+            <p className="text-gray-600 mt-2">{profile.bio}</p>
+          </div>
         </div>
+        <div className="flex gap-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className='w-6 h-6 hover:cursor-pointer'>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className='w-6 h-6 hover:cursor-pointer'>
+  <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className='w-6 h-6 hover:cursor-pointer'>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+        </div>
+        </div>
+
+                    {/* <p className="text-gray-600 mt-2 text-lg">{profile.bio}</p> */}
+
+        {/* Skills section */}
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label>Full Name</label>
+          </div>
+          <div>
+            <label>Last Name</label>
+          </div>
+          <div>
+            <label>Phone No</label>
+          </div>
+          <div>
+            <label>Email</label>
+          </div>
+          <div>
+            <label>Bio</label>
+          </div>
+        </div>
+
+<div className="grid md:grid-cols-2 gap-8 mb-8">
         <div>
-          {isEditing ? (
-            <div className="flex space-x-4">
-              <button className="px-6 py-2 bg-primary text-white rounded-full hover:bg-secondary transition-all duration-200">
-                Save
-              </button>
-              <button
-                onClick={() => setIsEditing(false)}
-                className="px-6 py-2 bg-gray-300 text-black rounded-full hover:bg-gray-400 transition-all duration-200"
-              >
-                Cancel
-              </button>
+            <h3 className="font-semibold mb-3">
+              Skills I Have
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {profile.skillsHave.map((skill, idx) => (
+                <span
+                  key={idx}
+                  className="bg-red-100 text-red-500 text-sm font-medium px-3 py-1 rounded-full shadow-sm hover:bg-red-200 transition"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-          ) : (
-            <button
-              onClick={() => setIsEditing(true)}
-              className="px-6 py-2 bg-primary text-white rounded-full hover:bg-secondary transition-all duration-200"
-            >
-              Edit Profile
-            </button>
-          )}
-        </div>
-      </div>
+          </div>
 
-      {/* Skills Section */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-700 mb-3">Skills You Offer</h3>
-          <ul className="list-disc pl-5 text-gray-600 space-y-2">
-            {user.skillsOffered.map((skill, idx) => (
-              <li key={idx} className="text-sm">{skill}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold text-gray-700 mb-3">Skills You Want to Learn</h3>
-          <ul className="list-disc pl-5 text-gray-600 space-y-2">
-            {user.skillsToLearn.map((skill, idx) => (
-              <li key={idx} className="text-sm">{skill}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Footer Section */}
-      <div className="mt-8 text-center">
-        <button>edit</button>
-        <button>save</button>
+          <div>
+            <h3 className="font-semibold mb-3">
+              Skills I Want to Learn
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {profile.skillsWant.map((skill, idx) => (
+                <span
+                  key={idx}
+                  className="bg-red-100 text-red-500 text-sm font-medium px-3 py-1 rounded-full shadow-sm hover:bg-red-200 transition"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          </div>
+       
       </div>
     </div>
   );

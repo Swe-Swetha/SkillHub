@@ -4,6 +4,9 @@ import Dashboard from "../User/Components/Dashboard";
 import Settings from "../User/Components/Settings";
 import Mentor from "../User/Components/Mentor"
 import MeetingForm from "../User/Components/MeetingForm";
+import MoreCourses from "../User/Components/MoreCourses";
+import Login from "../User/Components/Login";
+import Profile from "../User/Components/Profile";
 
 
 
@@ -13,6 +16,9 @@ export default function UserRoutes() {
             <Routes>
                 <Route path="/quiz/:slug" element={<Quiz/>} />
                 <Route path="/" element={<Dashboard/>} />
+                <Route path="/loginform" element={<Login/>} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/viewMoreCourse" element={<MoreCourses/>} />
                 <Route path="/settings" element={<Settings />}/>
                 <Route path="/mentor" element={<Mentor />} />
                 <Route path="/meetingForm" element={<MeetingForm/>} />

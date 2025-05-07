@@ -60,7 +60,7 @@ const ConnectPage = () => {
 
       {/* Banner Images */}
 <div className="flex justify-center flex-wrap gap-8 p-4 mt-6 w-full">
-  <div className="border border-gray-400 p-4 max-w-lg text-center">
+  <div className="border border-gray-400 p-4 max-w-lg text-center rounded-lg hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out">
     <img src={teaching} width={400} className="mx-auto" />
     <h2 className='font-bold text-xl mt-4'>Become a Mentor</h2>
     <p className='mt-2 text-gray-700'>
@@ -68,7 +68,7 @@ const ConnectPage = () => {
     </p>
     <button className='bg-gray-600 text-white w-full py-2 mt-4' onClick={()=>{navigate('/mentor')}}>Start Teaching</button>
   </div>
-  <div className="border border-gray-400 p-4 max-w-lg text-center">
+  <div className="border border-gray-400 p-4 max-w-lg text-center rounded-lg hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out">
     <img src={enrolling} width={400} className="mx-auto" />
     <h2 className='font-bold text-xl mt-4'>Learn New Skills</h2>
     <p className='mt-2 text-gray-700'>
