@@ -43,6 +43,8 @@ const Blogs = () => {
         </div>
       </div>
 
+      <input placeholder='search for the content...' className='w-full border-2 border-gray-400 p-2 rounded-lg'/>
+
       {/* BlogPost modal */}
       {showForm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30">
