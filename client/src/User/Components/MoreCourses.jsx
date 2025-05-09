@@ -1,6 +1,12 @@
 import React from 'react';
+import { useEffect } from 'react';
 
 const MoreCourses = () => {
+
+    useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, []);
   const moreCourses = [
     {
       id: 1,
