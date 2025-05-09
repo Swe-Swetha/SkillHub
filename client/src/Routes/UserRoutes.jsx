@@ -7,6 +7,8 @@ import MeetingForm from "../User/Components/MeetingForm";
 import MoreCourses from "../User/Components/MoreCourses";
 import Login from "../User/Components/Login";
 import Profile from "../User/Components/Profile";
+import MyBadges from "../User/Components/MyBadges";
+// import Skillbucks from "../User/Components/Dashboard/Skillbucks";
 
 
 
@@ -18,6 +20,8 @@ export default function UserRoutes() {
                 <Route path="/" element={<Dashboard/>} />
                 <Route path="/loginform" element={<Login/>} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/myBadges" element={<MyBadges />} />
+                {/* <Route path="/skillbuck" element={<Skillbucks />} /> */}
                 <Route path="/viewMoreCourse" element={<MoreCourses/>} />
                 <Route path="/settings" element={<Settings />}/>
                 <Route path="/mentor" element={<Mentor />} />

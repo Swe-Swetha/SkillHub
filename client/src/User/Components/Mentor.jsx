@@ -153,7 +153,7 @@ const Mentor = () => {
       </div>
 
       {/* Table Header */}
-      <div className="w-full max-w-7xl grid grid-cols-5 gap-4 bg-gray-200 font-semibold p-4 rounded-lg shadow-md">
+      <div className="w-full max-w-6xl grid grid-cols-5 gap-4 bg-gray-200 font-semibold p-4 rounded-lg shadow-md">
         <div className="text-center">User Name</div>
         <div className="text-center">Requested Skills</div>
         <div className="text-center">Requested Date</div>
@@ -165,7 +165,7 @@ const Mentor = () => {
       {filteredRequests.map((req) => (
         <div
           key={req.id}
-          className="w-full max-w-7xl grid grid-cols-5 gap-4 items-center border-b border-gray-300 py-4 bg-white text-center"
+          className="w-full max-w-6xl grid grid-cols-5 gap-4 items-center border-b border-gray-300 py-4 bg-white text-center"
         >
           <div>{req.name}</div>
           <div>
