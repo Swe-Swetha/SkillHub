@@ -69,7 +69,11 @@ function OthersProfile() {
                                     {
                                         Object.entries(userData.skillsTeaching).map(([skills, level]) => {
                                             return (
+                                                <>
                                                 <li className='text-heading'>{skills}</li>
+                                                <li className='text-heading'>{level}</li>
+                                                
+                                                </>
 
                                             )
                                         })
