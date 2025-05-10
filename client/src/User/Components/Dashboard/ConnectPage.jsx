@@ -127,13 +127,13 @@ const ConnectPage = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button
-            className="bg-green-400 text-white  px-4 rounded-lg cursor-pointer"
+            className="bg-green-500 hover:bg-green-600 transition duration-200 text-white  px-4 rounded-lg cursor-pointer"
             onClick={() => setOutbox(true)}
           >
             Skill Outbox
           </button>
           <button
-            className="bg-green-400 text-white  px-4 rounded-lg cursor-pointer"
+            className="bg-green-500 hover:bg-green-600 transition duration-200 text-white  px-4 rounded-lg cursor-pointer"
             onClick={() => setInbox(true)}
           >
             Skill Inbox
@@ -145,10 +145,10 @@ const ConnectPage = () => {
             {filteredUsers.map((user) => (
               <div
                 key={user._id}
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1 border border-gray-100"
+                className="bg-gray-100 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1 border border-gray-100"
               >
                 {/* Placeholder Avatar */}
-                <div className="w-16 h-16 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                <div className="w-16 h-16 border border-red-500 text-red-500  rounded-full flex items-center justify-center text-xl font-bold mb-4">
                   {user.name[0]}
                 </div>
 
@@ -160,14 +160,14 @@ const ConnectPage = () => {
                   {user.skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium"
+                      className="border border-red-500 text-red-500  px-3 py-1 rounded-full text-sm font-medium"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
 
-                <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-200">
+                <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200">
                   View Profile
                 </button>
               </div>
