@@ -18,19 +18,36 @@ const ConnectPage = () => {
   const [inbox, setInbox] = useState(false);
   const navigate = useNavigate();
 
-  // Sample users loaded once on component mount
   useEffect(() => {
     const sampleUsers = [
       { _id: "1", name: "Alice Johnson", skills: ["JavaScript", "React"] },
       { _id: "2", name: "Bob Smith", skills: ["UI/UX", "Figma"] },
-      { _id: "3", name: "Charlie Ray", skills: ["Python", "Data Science"] },
-      { _id: "4", name: "Swetha", skills: ["Python", "Data Science"] },
+      {
+        _id: "3",
+        name: "Charlie Ray",
+        skills: ["Python", "Data Science", "Machine Learning"],
+      },
+      {
+        _id: "4",
+        name: "Swetha",
+        skills: ["Python", "Data Science", "SQL", "AI"],
+      },
+      { _id: "5", name: "Harshini", skills: ["Java", "Data Science"] },
+      {
+        _id: "6",
+        name: "Mugundhan",
+        skills: ["Python", "Data Science", "Pandas"],
+      },
+      {
+        _id: "7",
+        name: "Kavitha",
+        skills: ["Python", "Data Science", "ML", "DL"],
+      },
     ];
     setUsers(sampleUsers);
     setFilteredUsers(sampleUsers);
   }, []);
 
-  // Filter users whenever search term changes
   useEffect(() => {
     const lowerSearch = searchTerm.toLowerCase();
     const results = users.filter(
@@ -43,9 +60,10 @@ const ConnectPage = () => {
 
   return (
     <>
+      {/* Outbox Modal */}
       {outbox && (
         <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30 w-full h-screen">
-          <div className=" bg-white border border-gray-400 p-4 max-w-lg text-center rounded-lg hover:shadow-xl relative">
+          <div className="bg-white border border-gray-400 p-4 max-w-lg text-center rounded-lg hover:shadow-xl relative">
             <button
               onClick={() => setOutbox(false)}
               className="absolute top-2 right-2 text-gray-600 hover:text-red-500 transition-colors duration-200"
@@ -54,13 +72,13 @@ const ConnectPage = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="size-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M6 18 18 6M6 6l12 12"
                 />
               </svg>
@@ -74,9 +92,7 @@ const ConnectPage = () => {
             </p>
             <button
               className="bg-gray-600 text-white w-full py-2 mt-4"
-              onClick={() => {
-                navigate("/mentor");
-              }}
+              onClick={() => navigate("/mentor")}
             >
               Start Teaching
             </button>
@@ -84,20 +100,43 @@ const ConnectPage = () => {
         </div>
       )}
 
+      {/* Inbox Modal */}
       {inbox && (
-        <div className="border border-gray-400 p-4 max-w-lg text-center rounded-lg hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out">
-          <img src={enrolling} width={400} className="mx-auto" />
-          <h2 className="font-bold text-xl mt-4">Learn New Skills</h2>
-          <p className="mt-2 text-gray-700">
-            Unlock new knowledge and enhance your abilities. Browse and enroll
-            in courses taught by skilled mentors, tailored to help you learn at
-            your pace and achieve your goals.
-          </p>
-          <button className="bg-gray-600 text-white w-full py-2 mt-4">
-            Book Courses
-          </button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30 w-full h-screen">
+          <div className="bg-white border border-gray-400 p-4 max-w-lg text-center rounded-lg hover:shadow-xl relative">
+            <button
+              onClick={() => setInbox(false)}
+              className="absolute top-2 right-2 text-gray-600 hover:text-red-500 transition-colors duration-200"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <img src={enrolling} width={400} className="mx-auto" />
+            <h2 className="font-bold text-xl mt-4">Learn New Skills</h2>
+            <p className="mt-2 text-gray-700">
+              Unlock new knowledge and enhance your abilities. Browse and enroll
+              in courses taught by skilled mentors, tailored to help you learn
+              at your pace and achieve your goals.
+            </p>
+            <button className="bg-gray-600 text-white w-full py-2 mt-4">
+              Book Courses
+            </button>
+          </div>
         </div>
       )}
+
       <div className="relative">
         <h1 className="text-3xl font-bold text-center mt-2">
           Find Skill Partners
@@ -117,7 +156,6 @@ const ConnectPage = () => {
           your journey of learning and collaboration.
         </div>
 
-        {/* Search and User Cards */}
         <div className="flex justify-center mt-4 gap-4">
           <input
             type="text"
@@ -127,13 +165,13 @@ const ConnectPage = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button
-            className="bg-green-500 hover:bg-green-600 transition duration-200 text-white  px-4 rounded-lg cursor-pointer"
+            className="bg-green-500 hover:bg-green-600 transition duration-200 text-white px-4 rounded-lg cursor-pointer"
             onClick={() => setOutbox(true)}
           >
             Skill Outbox
           </button>
           <button
-            className="bg-green-500 hover:bg-green-600 transition duration-200 text-white  px-4 rounded-lg cursor-pointer"
+            className="bg-green-500 hover:bg-green-600 transition duration-200 text-white px-4 rounded-lg cursor-pointer"
             onClick={() => setInbox(true)}
           >
             Skill Inbox
@@ -141,29 +179,36 @@ const ConnectPage = () => {
         </div>
 
         <div className="p-6 max-w-full mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {filteredUsers.map((user) => (
               <div
                 key={user._id}
-                className="bg-gray-100 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1 border border-gray-100">
-                {/* Placeholder Avatar */}
-                <div className="w-16 h-16 border border-red-500 text-red-500  rounded-full flex items-center justify-center text-xl font-bold mb-4">
-                  {user.name[0]}
-                </div>
+                className="flex flex-col justify-between bg-gray-100 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1 border border-gray-100 min-h-[260px]"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 border border-red-500 text-red-500 rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                    {user.name[0]}
+                  </div>
 
-                <h2 className="text-xl font-bold text-gray-800 mb-2">
-                  {user.name}
-                </h2>
+                  <h2 className="text-xl font-bold text-gray-800 mb-2 text-center">
+                    {user.name}
+                  </h2>
 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {user.skills.map((skill, index) => (
-                    <span
-                      key={index}
-                      className="border border-red-500 text-red-500  px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap gap-2 justify-center mb-4 flex-grow">
+                    {user.skills.slice(0, 2).map((skill, index) => (
+                      <span
+                        key={index}
+                        className="border border-red-500 text-red-500 px-3 py-1 rounded-full text-sm font-medium"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                    {user.skills.length > 2 && (
+                      <span className="text-gray-500 text-sm">
+                        +{user.skills.length - 2} more
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200">
