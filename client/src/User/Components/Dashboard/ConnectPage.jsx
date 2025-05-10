@@ -145,8 +145,7 @@ const ConnectPage = () => {
             {filteredUsers.map((user) => (
               <div
                 key={user._id}
-                className="bg-gray-100 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1 border border-gray-100"
-              >
+                className="bg-gray-100 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1 border border-gray-100">
                 {/* Placeholder Avatar */}
                 <div className="w-16 h-16 border border-red-500 text-red-500  rounded-full flex items-center justify-center text-xl font-bold mb-4">
                   {user.name[0]}
