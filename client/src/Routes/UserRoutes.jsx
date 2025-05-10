@@ -8,6 +8,7 @@ import MoreCourses from "../User/Components/MoreCourses";
 import Login from "../User/Components/Login";
 import Profile from "../User/Components/Profile";
 import MyBadges from "../User/Components/MyBadges";
+import OthersProfile from "../User/Components/OthersProfile";
 // import Skillbucks from "../User/Components/Dashboard/Skillbucks";
 
 
@@ -26,6 +27,7 @@ export default function UserRoutes() {
                 <Route path="/settings" element={<Settings />}/>
                 <Route path="/mentor" element={<Mentor />} />
                 <Route path="/meetingForm" element={<MeetingForm/>} />
+                <Route path="/Others" element={<OthersProfile/>} />
             </Routes>
         </BrowserRouter>
     )
