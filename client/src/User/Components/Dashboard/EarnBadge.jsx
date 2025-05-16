@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import badge1 from "../../assets/badge1.png";
-import badge2 from "../../assets/badge2.png";
-import badge3 from "../../assets/badge3.png";
+// import badge1 from "../../assets/badge1.png";
+// import badge2 from "../../assets/badge2.png";
+// import badge3 from "../../assets/badge3.png";
 
 const EarnBadgePage = () => {
     const navigate = useNavigate();
@@ -14,7 +14,12 @@ const EarnBadgePage = () => {
         { id: 4, name: 'UI/UX', slug: 'ui-ux' },
         { id: 5, name: 'Node.js', slug: 'node-js' }, 
         { id: 6, name: 'Java', slug: 'java' }, 
-        { id: 6, name: 'My Sql', slug: 'sql' }, 
+        { id: 7, name: 'My Sql', slug: 'sql' }, 
+        { id: 8, name: 'Angular', slug: 'angular' }, 
+        { id: 9, name: 'Django', slug: 'django' }, 
+        { id: 10, name: 'Flask', slug: 'flask' }, 
+        { id: 11, name: 'MongoDB', slug: 'mongodb' }, 
+        { id: 12, name: 'Vue', slug: 'vue' }, 
     ];
 
     const bgColors = [
@@ -26,6 +31,10 @@ const EarnBadgePage = () => {
         'bg-teal-400',
         'bg-pink-400',
         'bg-indigo-400',
+        'bg-[#D17D98]',
+        'bg-[#3A7D44]',
+        'bg-[#BDB395]',
+        'bg-[#D50B8B]'
     ];
 
     const handleCourseClick = (slug) => {
@@ -38,15 +47,15 @@ const EarnBadgePage = () => {
                         <div className="flex">
 
             <h1 className="text-3xl font-bold pr-4">Earn Your Badge</h1>
-            <img src={badge1} className='w-12 h-12'/>
+            {/* <img src={badge1} className='w-12 h-12'/>
             <img src={badge2} className='w-12 h-12'/>
-            <img src={badge3} className='w-12 h-12'/>
+            <img src={badge3} className='w-12 h-12'/> */}
             </div>
             <p className="mb-4 text-gray-600">Select a course and pass the quiz to earn your badge!</p>
 
             <input
                 type="text"
-                className="w-full p-3 border border-gray-300 rounded-lg mb-8 focus:outline-none focus:ring-1 focus:ring-blue-900"
+                className="w-full p-3 border border-gray-400 rounded-lg mb-8 focus:outline-none focus:ring-1 focus:ring-blue-900"
                 placeholder="Search"
             />
 
@@ -54,10 +63,10 @@ const EarnBadgePage = () => {
                 {courses.map((course, index) => (
                     <div
                         key={course.id}
-                        className={`cursor-pointer p-6 rounded-lg shadow hover:shadow-lg transition text-white ${bgColors[index % bgColors.length]}`}
+                        className={`cursor-pointer p-6 rounded-lg shadow hover:shadow-lg transition min-h-[130px] text-white ${bgColors[index % bgColors.length]}`}
                         onClick={() => handleCourseClick(course.slug)}
                     >
-                        <div className="flex flex-col items-center justify-center">
+                        <div className="flex flex-col items-center justify-center mt-6">
                             {/* {course.iconImage && (
                                 <img src={course.iconImage} alt={course.name} className="w-12 h-12 mb-3" />
                             )} */}

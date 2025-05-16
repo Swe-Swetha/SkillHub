@@ -143,28 +143,111 @@ const ConnectPage = () => {
         </h1>
 
         <div className="flex flex-wrap justify-center">
-          <img src={connect5} width={250} />
-          <img src={connect2} width={250} />
-          <img src={connect3} width={250} />
-          <img src={connect1} width={250} />
-          <img src={connect6} width={250} />
-          <img src={connect4} width={250} />
+          <img src={connect5} width={245} />
+          <img src={connect2} width={245} />
+          <img src={connect3} width={245} />
+          <img src={connect1} width={245} />
+          <img src={connect6} width={245} />
+          <img src={connect4} width={245} />
         </div>
 
         <div className="text-center mt-2">
           A community where skills are shared and friendships are formed. Start
           your journey of learning and collaboration.
         </div>
-
         <div className="flex justify-center mt-4 gap-4">
+          <div className="w-full max-w-xl h-[150px] p-4 rounded-2xl shadow-md bg-gray-100">
+            <p className="font-bold text-lg mt-2">Find a Mentor</p>
+            <p>
+              Connect with experts who can guide you through your learning
+              journey.
+            </p>
+
+            <button className="flex gap-2 items-center mt-2 bg-[#003092] px-4 py-2 text-white rounded-lg cursor-pointer font-bold">
+              Find Mentors
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className="w-full max-w-xl h-[150px] p-4 rounded-2xl shadow-md bg-gray-100">
+            <p className="font-bold text-lg mt-2">Become a Mentor</p>
+            <p>Share your expertise, help others learn, and earn Skillbucks.</p>
+            <button className="flex gap-2 items-center mt-2 bg-[#003092] px-4 py-2 text-white rounded-lg cursor-pointer font-bold">
+              Start Mentoring
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div className="flex justify-center mt-6 gap-4">
           <input
             type="text"
-            className="w-[600px] p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-400"
+            className="w-[690px] p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-400"
             placeholder="Search by name or skill (e.g., graphic design, JavaScript)"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button
+          <div className="flex items-center gap-2 border border-gray-300 px-20 rounded-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-5 h-5 cursor-pointer"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"
+              />
+            </svg>
+
+            <button className="">Filter</button>
+          </div>
+          <div className="flex items-center gap-2 border border-gray-300 px-20 rounded-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-5 h-5 cursor-pointer"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"
+              />
+            </svg>
+
+            <button className="">Filter</button>
+          </div>
+          {/* <button
             className="bg-green-500 hover:bg-green-600 transition duration-200 text-white px-4 rounded-lg cursor-pointer"
             onClick={() => setOutbox(true)}
           >
@@ -175,26 +258,33 @@ const ConnectPage = () => {
             onClick={() => setInbox(true)}
           >
             Skill Inbox
-          </button>
+          </button> */}
         </div>
 
         <div className="p-6 max-w-full mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {filteredUsers.map((user) => (
               <div
                 key={user._id}
                 className="flex flex-col justify-between bg-gray-100 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1 border border-gray-100 min-h-[260px]"
               >
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 border border-red-500 text-red-500 rounded-full flex items-center justify-center text-xl font-bold mb-4">
-                    {user.name[0]}
+                <div className="">
+                  <div className="flex gap-4 items-center">
+                    <div className="w-16 h-16 border border-red-500 text-red-500 rounded-full flex items-center justify-center text-xl font-bold">
+                      {user.name[0]}
+                    </div>
+                    <div className="">
+                      <h2 className="text-xl font-bold text-gray-800 ">
+                        {user.name}
+                      </h2>
+                      <h2 className="">Expert</h2>
+                    </div>
                   </div>
-
-                  <h2 className="text-xl font-bold text-gray-800 mb-2 text-center">
-                    {user.name}
-                  </h2>
-
-                  <div className="flex flex-wrap gap-2 justify-center mb-4 flex-grow">
+                  <div className="flex flex-wrap gap-2 mb-4 flex-grow mt-4">
+                    Mobile app developer creating beautiful experiences
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4 flex-grow mt-4">
+                    Skills :
                     {user.skills.slice(0, 2).map((skill, index) => (
                       <span
                         key={index}
@@ -210,10 +300,38 @@ const ConnectPage = () => {
                     )}
                   </div>
                 </div>
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center text-blue-600 cursor-pointer">
+                    <div className="">
+                      <button className="">View Profile</button>
+                    </div>
+                    <div className="mt-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="">
+                    <button className="flex gap-2 items-center bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+</svg>
 
-                <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200">
-                  View Profile
-                </button>
+                      Connect
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

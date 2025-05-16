@@ -117,6 +117,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Skillbucks from './Skillbucks';
 import { useNavigate } from 'react-router-dom';
+import logo from "../../assets/logo.png"
+import profile from "../../assets/profile.png"
 
 const DashboardHeader = ({ activeTab, handleTabClick }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -163,8 +165,12 @@ const DashboardHeader = ({ activeTab, handleTabClick }) => {
           } fixed top-0 left-0 w-full bg-white shadow-md z-50`}
       >
         <div className="flex justify-between p-6 items-center">
+          <div className="flex gap-1 items-center">
+            <div className="">
+              <img src={logo} width={40} />
+            </div>
           <div className="text-xl font-bold">SkillHub</div>
-
+</div>
           <ul className="flex gap-4">
             {tabs.map((tab, id) => (
               <li
@@ -228,7 +234,8 @@ const DashboardHeader = ({ activeTab, handleTabClick }) => {
               className="hover:cursor-pointer relative"
               onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
             >
-              Profile
+              <img src={profile} width={40} />
+              {/* Profile */}
               {isProfileDropdownOpen && (
                 <div className="absolute right-0 mt-4 w-40 bg-white border rounded shadow-md z-50">
                   <ul className="text-sm text-gray-700">
