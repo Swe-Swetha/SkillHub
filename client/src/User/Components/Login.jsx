@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import auth from '../Components/assets/auth.jpeg'
-
+// import { useNavigate } from 'react-router-dom';
+import auth from "../assets/auth.jpeg";
 
 function Login() {
     // const [formData, setFormData] = useState({ email: '', password: '' });

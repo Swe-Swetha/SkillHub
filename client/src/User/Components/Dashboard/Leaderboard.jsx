@@ -1,62 +1,141 @@
+
 import React, { useState } from 'react';
+import first from "../../assets/first.png";
+import second from "../../assets/second1.png";
+import third from "../../assets/third.png";
 
 const Leaderboard = () => {
   const [view, setView] = useState('skillbucks');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const sampleUsers = [
-    { id: 1, name: 'Alice Johnson', skillbucks: 1500, badges: 5 },
-    { id: 2, name: 'Bob Smith', skillbucks: 1200, badges: 7 },
-    { id: 3, name: 'Charlie Ray', skillbucks: 1800, badges: 3 },
-    { id: 4, name: 'Dana Lopez', skillbucks: 1000, badges: 9 },
+    {
+      id: 1,
+      name: 'Alice Johnson',
+      skillbucks: 1500,
+      badges: 5,
+      profile: 'https://i.pravatar.cc/150?img=1',
+      role: 'Frontend Developer',
+    },
+    {
+      id: 2,
+      name: 'Bob Smith',
+      skillbucks: 1200,
+      badges: 7,
+      profile: 'https://i.pravatar.cc/150?img=2',
+      role: 'Backend Specialist',
+    },
+    {
+      id: 3,
+      name: 'Charlie Ray',
+      skillbucks: 1800,
+      badges: 3,
+      profile: 'https://i.pravatar.cc/150?img=3',
+      role: 'UI/UX Designer',
+    },
+    {
+      id: 4,
+      name: 'Dana Lopez',
+      skillbucks: 1000,
+      badges: 9,
+      profile: 'https://i.pravatar.cc/150?img=4',
+      role: 'Full Stack Developer',
+    },
   ];
 
-  // Sort based on selected view
   const sortedUsers =
     view === 'skillbucks'
       ? [...sampleUsers].sort((a, b) => b.skillbucks - a.skillbucks)
       : [...sampleUsers].sort((a, b) => b.badges - a.badges);
 
-  return (
-    <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Leaderboard</h1>
+  const topThree = sortedUsers.slice(0, 3); // Always show real top 3
 
-      {/* Toggle Buttons */}
-      <div className="flex gap-4 mb-6">
-        <button
-          onClick={() => setView('skillbucks')}
-          className={`px-4 py-2 rounded ${view === 'skillbucks' ? 'bg-indigo-600 text-white' : 'bg-gray-200'
+  const filteredUsers = sortedUsers.filter(user =>
+    user.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <div className="p-6 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
+        <h1 className="text-3xl font-bold">Leaderboard</h1>
+        <input
+          placeholder="Search by name"
+          className="p-2 rounded-md w-full max-w-lg border border-gray-400 focus:border-none focus:outline-none focus:ring-1 focus:ring-yellow-400"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <div className="flex gap-4">
+          <button
+            onClick={() => setView('skillbucks')}
+            className={`px-4 py-2 rounded-full ${
+              view === 'skillbucks' ? 'bg-green-500 text-white' : 'bg-gray-200'
             }`}
-        >
-          Skillbucks
-        </button>
-        <button
-          onClick={() => setView('badges')}
-          className={`px-4 py-2 rounded ${view === 'badges' ? 'bg-indigo-600 text-white' : 'bg-gray-200'
+          >
+            Skillbucks
+          </button>
+          <button
+            onClick={() => setView('badges')}
+            className={`px-4 py-2 rounded-full ${
+              view === 'badges' ? 'bg-green-500 text-white' : 'bg-gray-200'
             }`}
-        >
-          Badges Earned
-        </button>
+          >
+            Badges Earned
+          </button>
+        </div>
       </div>
 
-      {/* Leaderboard Table */}
-      <div className="bg-white shadow rounded">
-        <div className="grid grid-cols-3 font-semibold p-4 border-b">
+      {/* Top 3 Cards (unfiltered) */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        {topThree.map((user, index) => (
+          <div
+            key={user.id}
+            className="bg-white p-6 shadow-lg rounded-xl text-center border cursor-pointer relative border-l-8 border-l-yellow-400"
+          >
+            <div className="absolute top-2 right-2">
+              {index === 0 && <img src={first} width={40} />}
+              {index === 1 && <img src={second} width={40} />}
+              {index === 2 && <img src={third} width={40} />}
+            </div>
+            <img
+              src={user.profile}
+              alt={user.name}
+              className="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-yellow-200"
+            />
+            <div className="text-xl font-bold">{user.name}</div>
+            <div className="text-sm text-gray-500">{user.role}</div>
+            <div className="mt-3 text-lg font-semibold text-green-600">
+              {view === 'skillbucks'
+                ? `${user.skillbucks} 🪙`
+                : `${user.badges} 🏅`}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Leaderboard Table (filtered) */}
+      <div className="bg-white border-t-4 border-t-yellow-400 shadow-lg rounded-lg">
+        <div className="grid grid-cols-3 text-center font-semibold p-4 border-b">
           <div>Rank</div>
           <div>Name</div>
           <div>{view === 'skillbucks' ? 'Skillbucks' : 'Badges'}</div>
         </div>
-        {sortedUsers.map((user, index) => (
+        {filteredUsers.map((user, index) => (
           <div
             key={user.id}
-            className="grid grid-cols-3 items-center px-4 py-3 border-b hover:bg-gray-50"
+            className="grid grid-cols-3 text-center items-center px-4 py-3 border-b hover:bg-gray-50"
           >
             <div>#{index + 1}</div>
             <div>{user.name}</div>
             <div>
-              {view === 'skillbucks' ? `${user.skillbucks} 🪙` : `${user.badges} 🏅`}
+              {view === 'skillbucks'
+                ? `${user.skillbucks} 🪙`
+                : `${user.badges} 🏅`}
             </div>
           </div>
         ))}
+        {filteredUsers.length === 0 && (
+          <div className="text-center text-gray-500 p-4">No results found.</div>
+        )}
       </div>
     </div>
   );

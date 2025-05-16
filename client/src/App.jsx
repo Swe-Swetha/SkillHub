@@ -1,14 +1,10 @@
 import React from 'react'
-// import Login from './User/Components/Login'
-import Dashboard from './User/Components/Dashboard'
+import UserRoutes from './Routes/UserRoutes'
 
 function App() {
   return (
     <>
-    <Dashboard />
-    {/* <DashboardHeader /> */}
-    {/* <Explore /> */}
-
+    <UserRoutes />
     </>
   )
 }

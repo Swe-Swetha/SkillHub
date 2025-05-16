@@ -1,55 +1,46 @@
 import React from 'react';
 import HomeCards from '../../Pages/HomeCards';
-import explore from '../../assets/HomeImage.avif';
-
-// Functional card data model
-const GuidanceCards = [
-  {
-    id: 1,
-    title: 'Discover Interests',
-    description: 'Explore categories and take mini quizzes to find what excites you the most.',
-    bgColor: 'bg-[#F0F9FF]',
-    textColor: 'text-blue-600',
-  },
-  {
-    id: 2,
-    title: 'Get Recommendations',
-    description: 'Based on your interests, we’ll suggest trending or high-rated courses and mentors.',
-    bgColor: 'bg-[#FEF9E7]',
-    textColor: 'text-yellow-600',
-  },
-  {
-    id: 3,
-    title: 'Start Small',
-    description: 'Try out quick 30-minute intro lessons to test your comfort with different skills.',
-    bgColor: 'bg-[#FDF2F8]',
-    textColor: 'text-pink-600',
-  },
-];
+import explore from '../../assets/home1.JPG';
+import explore2 from '../../assets/home2.JPG';
+import card1 from "../../assets/Explore.avif";
+import card2 from "../../assets/Connect.avif";
+import card3 from "../../assets/Profile.avif";
+import { useNavigate } from 'react-router-dom';
 
 function Explore() {
+
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className="">
+      <div>
         {/* Hero Section */}
-        <div className="flex flex-col md:flex-row p-6 justify-center items-center">
-          <img src={explore} width={650} alt="Explore" />
-          <div className="text-center md:text-left md:ml-10">
+        <div className="flex flex-col md:flex-row justify-between">
+          <img src={explore} width={440} alt="Explore" />
+          <div className="text-center md:text-left">
             <div className="mt-10 md:mt-32 font-semibold text-4xl">
               Collaborative Skill Sharing Hub
             </div>
-            <div className="text-2xl mt-6 text-gray-500">
+            <div className="text-2xl mt-6 text-gray-500 text-center">
               Teach what you know - Learn what you love
             </div>
+            <div className="flex gap-1 items-center justify-center text-gray-400 mt-6 w-full border border-gray-400 rounded-md shadow-lg py-4 px-24">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+</svg>
+
+              <input className='w-full focus:border-none focus:outline-none' placeholder='Search the course you want to explore'/>
+            </div>
           </div>
+           <img src={explore2} width={440} alt="Explore" />
         </div>
 
         {/* Explore Courses Section */}
         <div className="bg-[#7BD3EA]">
-          <h2 className="text-4xl font-bold text-center pt-6">
+          <h2 className="text-4xl font-bold text-center py-6">
             Explore Courses on your Choice
           </h2>
-          <div className="grid grid-rows-2 grid-cols-5 gap-8 bg-secondary px-48 py-10">
+          <div className="grid grid-rows-2 grid-cols-5 gap-8 bg-secondary px-48">
             {HomeCards.map((item) => (
               <div
                 key={item.id}
@@ -63,26 +54,52 @@ function Explore() {
               </div>
             ))}
           </div>
+          <div className="flex justify-end px-48 py-6">
+              <button className=" text-black font-medium hover:underline" onClick={()=>{navigate('/viewMoreCourse')}}>
+                View More Courses
+              </button>
+              </div>
+        </div>
+
+        <div className="bg-[#161179] h-[100px] flex items-center justify-evenly text-white text-2xl font-semibold">
+          <div className="">Rated Excellent</div>
+          <div className="">44 thousand+Learners</div>
+          <div className="">100+ Courses</div>
         </div>
 
         {/* Guidance Cards Section */}
-        <div className="bg-white py-16 px-8">
+        <div className="mt-12 max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
             Not sure where to begin? Or even what you want to do?
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {GuidanceCards.map((card) => (
-              <div
-                key={card.id}
-                className={`${card.bgColor} p-6 rounded-xl shadow hover:shadow-lg transition duration-300 text-center`}
-              >
-                <h3 className={`text-xl font-semibold mb-2 ${card.textColor}`}>{card.title}</h3>
-                <p className="text-gray-600">{card.description}</p>
-              </div>
-            ))}
+          <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-2 border border-gray-400 rounded-lg shadow-md my-6">
+            <img src={card1} width={300} className='p-2' />
+            <div className="p-4">
+            <h3 className='text-xl font-semibold mb-2'>Explore Tech Skills</h3>
+            <p>Discover in-demand skills like web development, AI, or cloud computing. Learn from real people and stay ahead in tech.</p>
+            <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg mb-2">Explore Now</button>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 border border-gray-400 rounded-lg shadow-md my-6">
+            <img src={card2} width={300} className='p-2'/>
+            <div className="p-4">
+            <h3 className='text-xl font-semibold mb-2'>Collaborate with Tech Minds</h3>
+            <p>Team up with tech enthusiasts for coding projects, code reviews, or learning circles. Knowledge grows faster together.</p>
+            <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg mb-2 ">Connect Now</button>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 border border-gray-400 rounded-lg shadow-md my-6">
+            <img src={card3} width={300} className='p-2' />
+            <div className="p-4">
+            <h3 className='text-xl font-semibold mb-2'>Showcase Your Journey</h3>
+            <p>Earn badges and build your profile by teaching, learning, or mentoring. Highlight your tech path for future opportunities.</p>
+            <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg mb-2">Boost Profile</button>
+            </div>
+          </div>
           </div>
         </div>
+
       </div>
     </>
   );
