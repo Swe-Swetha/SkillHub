@@ -6,20 +6,21 @@ import MoreCourses from "../User/Components/MoreCourses";
 import Login from "../User/Components/Login";
 import Profile from "../User/Components/Profile";
 import MyBadges from "../User/Components/MyBadges";
-import OthersProfile from "../User/Components/OthersProfile";
+// import OthersProfile from "../User/Components/OthersProfile";
 import Courses from "../User/Components/Courses";
 import Explore from "../User/Components/Dashboard/Explore";
 import Skillbucks from "../User/Components/Dashboard/Skillbucks";
-import ScheduleMeetingForm from "../User/Components/ScheduleMeetingForm";
+// import ScheduleMeetingForm from "../User/Components/ScheduleMeetingForm";
 import MentorshipRequests from "../User/Components/MentorshipRequest";
 import TeachingDashboard from "../User/Components/TeachingDashboard";
 import LearningDashboard from "../User/Components/LearningDashboard";
+import CourseMatch from "../User/Components/CourseMatch";
 
 export default function UserRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/schedule" element={<ScheduleMeetingForm />} />
+        {/* <Route path="/schedule" element={<ScheduleMeetingForm />} /> */}
         <Route path="/mentorReq" element={<MentorshipRequests />} />
         <Route path="/quiz/:slug" element={<Quiz />} />
         <Route path="/" element={<Dashboard />} />
@@ -29,10 +30,12 @@ export default function UserRoutes() {
         <Route path="/myBadges" element={<MyBadges />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/viewMoreCourse" element={<MoreCourses />} />
+        <Route path="/skillbuck" element={<Skillbucks />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/Others" element={<OthersProfile />} />
+        {/* <Route path="/Others" element={<OthersProfile />} /> */}
         <Route path="/teaching" element={<TeachingDashboard />} />
         <Route path="/learn" element={<LearningDashboard />} />
+        <Route path="/course-match/:id" element={<CourseMatch />} />
       </Routes>
     </BrowserRouter>
   );
