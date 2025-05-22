@@ -156,7 +156,7 @@
 //               <div>Skill I Want</div>
 //               <input placeholder='Skill I Want' className='border border-gray-400 py-1 px-2 rounded-md w-full focus:outline-none focus:border-green-500'/>
 //             </div>
-           
+
 //           </div>
 //                 <textarea placeholder="Bio" className="w-full p-2 border border-gray-400 rounded-md focus:outline-none focus:border-green-500" rows={2}></textarea>
 //               </form>
@@ -186,140 +186,142 @@ import React from 'react';
 
 const ProfilePage = () => {
   return (
-    <div className="max-w-5xl mx-auto p-6 space-y-6 bg-gray-50 min-h-screen">
-      {/* Header */}
-      <div className="bg-red-600 text-white rounded-xl p-6 flex justify-between items-center">
-        <div className="flex items-center gap-4">
-          <img
-            src="https://i.pravatar.cc/80?img=12"
-            alt="profile"
-            className="rounded-full w-16 h-16"
-          />
-          <div>
-            <h2 className="text-xl font-bold">John Doe</h2>
-            <div className="flex gap-2 text-sm mt-1">
-              <span className="bg-white text-black px-2 py-0.5 rounded">425 Skillbucks</span>
-              <span className="bg-white text-violet-600 px-2 py-0.5 rounded">Advanced</span>
+    <>
+      <div className="max-w-5xl mx-auto p-6 space-y-6 bg-gray-50 min-h-screen">
+        {/* Header */}
+        <div className="bg-red-600 text-white rounded-xl p-6 flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <img
+              src="https://i.pravatar.cc/80?img=12"
+              alt="profile"
+              className="rounded-full w-16 h-16"
+            />
+            <div>
+              <h2 className="text-xl font-bold">John Doe</h2>
+              <div className="flex gap-2 text-sm mt-1">
+                <span className="bg-white text-black px-2 py-0.5 rounded">425 Skillbucks</span>
+                <span className="bg-white text-violet-600 px-2 py-0.5 rounded">Advanced</span>
+              </div>
+            </div>
+          </div>
+          <button className="bg-white text-violet-600 font-semibold px-4 py-2 rounded-md hover:bg-gray-100 transition">
+            Edit Profile
+          </button>
+        </div>
+
+        {/* About & Contact */}
+        <div className="bg-white rounded-xl p-6 shadow">
+          <div className="mb-4">
+            <h3 className="font-semibold text-lg">About</h3>
+            <p className="text-gray-700 mt-1">Frontend developer with 5 years of experience</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold">Skills I Have</h3>
+              <div className="flex flex-wrap gap-2 mt-1">
+                <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">React</span>
+                <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">UI Design</span>
+              </div>
+
+              <h3 className="font-semibold mt-4">Skills I Want</h3>
+              <div className="flex flex-wrap gap-2 mt-1">
+                <span className="bg-blue-100 px-3 py-1 rounded-full text-sm text-blue-800">TypeScript</span>
+                <span className="bg-blue-100 px-3 py-1 rounded-full text-sm text-blue-800">Machine Learning</span>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold">Contact</h3>
+              <p className="text-gray-700">Email: john@example.com</p>
+              <p className="text-gray-700">Phone: +1 (234) 567-8901</p>
             </div>
           </div>
         </div>
-        <button className="bg-white text-violet-600 font-semibold px-4 py-2 rounded-md hover:bg-gray-100 transition">
-          Edit Profile
-        </button>
-      </div>
 
-      {/* About & Contact */}
-      <div className="bg-white rounded-xl p-6 shadow">
-        <div className="mb-4">
-          <h3 className="font-semibold text-lg">About</h3>
-          <p className="text-gray-700 mt-1">Frontend developer with 5 years of experience</p>
-        </div>
-
+        {/* Badges & Connections */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-semibold">Skills I Have</h3>
-            <div className="flex flex-wrap gap-2 mt-1">
-              <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">React</span>
-              <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
-              <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">UI Design</span>
+          {/* Earned Badges */}
+          <div className="bg-white rounded-xl p-6 shadow">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-semibold text-lg">Earned Badges</h3>
+              <button className="text-violet-600 text-sm">Earn More</button>
             </div>
-
-            <h3 className="font-semibold mt-4">Skills I Want</h3>
-            <div className="flex flex-wrap gap-2 mt-1">
-              <span className="bg-blue-100 px-3 py-1 rounded-full text-sm text-blue-800">TypeScript</span>
-              <span className="bg-blue-100 px-3 py-1 rounded-full text-sm text-blue-800">Machine Learning</span>
+            <div className="flex gap-4">
+              <div className="bg-gray-100 p-4 rounded text-center w-full">
+                <div className="text-2xl">🏅</div>
+                <div className="text-sm mt-2">JavaScript Pro</div>
+              </div>
+              <div className="bg-gray-100 p-4 rounded text-center w-full">
+                <div className="text-2xl">🏅</div>
+                <div className="text-sm mt-2">React Master</div>
+              </div>
+              <div className="bg-gray-100 p-4 rounded text-center w-full">
+                <div className="text-2xl">🏅</div>
+                <div className="text-sm mt-2">Web Design</div>
+              </div>
             </div>
           </div>
-           <div>
-            <h3 className="font-semibold">Contact</h3>
-            <p className="text-gray-700">Email: john@example.com</p>
-            <p className="text-gray-700">Phone: +1 (234) 567-8901</p>
+
+          {/* Connections */}
+          <div className="bg-white rounded-xl p-6 shadow">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-semibold text-lg">Connections</h3>
+              <button className="text-violet-600 text-sm">Find More</button>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <img src="https://i.pravatar.cc/40?img=3" className="rounded-full w-10 h-10" />
+                <div>
+                  <div className="font-medium">Jane Smith</div>
+                  <div className="text-sm text-gray-500">Python, Data Science</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <img src="https://i.pravatar.cc/40?img=5" className="rounded-full w-10 h-10" />
+                <div>
+                  <div className="font-medium">Alex Johnson</div>
+                  <div className="text-sm text-gray-500">UX Design, Figma</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <img src="https://i.pravatar.cc/40?img=7" className="rounded-full w-10 h-10" />
+                <div>
+                  <div className="font-medium">Sarah Williams</div>
+                  <div className="text-sm text-gray-500">Flutter, Dart</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Badges & Connections */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Earned Badges */}
+        {/* Enrolled Courses */}
         <div className="bg-white rounded-xl p-6 shadow">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="font-semibold text-lg">Earned Badges</h3>
-            <button className="text-violet-600 text-sm">Earn More</button>
+            <h3 className="font-semibold text-lg">Enrolled Courses</h3>
+            <button className="text-violet-600 text-sm">Explore More</button>
           </div>
-          <div className="flex gap-4">
-            <div className="bg-gray-100 p-4 rounded text-center w-full">
-              <div className="text-2xl">🏅</div>
-              <div className="text-sm mt-2">JavaScript Pro</div>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="border p-4 rounded-md">
+              <h4 className="font-semibold">React Fundamentals</h4>
+              <p className="text-sm text-gray-600">John Doe</p>
+              <span className="text-xs bg-gray-200 px-2 py-0.5 rounded-full mt-1 inline-block">Beginner</span>
             </div>
-            <div className="bg-gray-100 p-4 rounded text-center w-full">
-              <div className="text-2xl">🏅</div>
-              <div className="text-sm mt-2">React Master</div>
+            <div className="border p-4 rounded-md">
+              <h4 className="font-semibold">UI/UX Design Principles</h4>
+              <p className="text-sm text-gray-600">Jane Smith</p>
+              <span className="text-xs bg-gray-200 px-2 py-0.5 rounded-full mt-1 inline-block">Intermediate</span>
             </div>
-            <div className="bg-gray-100 p-4 rounded text-center w-full">
-              <div className="text-2xl">🏅</div>
-              <div className="text-sm mt-2">Web Design</div>
+            <div className="border p-4 rounded-md">
+              <h4 className="font-semibold">Data Science Essentials</h4>
+              <p className="text-sm text-gray-600">Alex Johnson</p>
+              <span className="text-xs bg-gray-200 px-2 py-0.5 rounded-full mt-1 inline-block">Intermediate</span>
             </div>
-          </div>
-        </div>
-
-        {/* Connections */}
-        <div className="bg-white rounded-xl p-6 shadow">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="font-semibold text-lg">Connections</h3>
-            <button className="text-violet-600 text-sm">Find More</button>
-          </div>
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <img src="https://i.pravatar.cc/40?img=3" className="rounded-full w-10 h-10" />
-              <div>
-                <div className="font-medium">Jane Smith</div>
-                <div className="text-sm text-gray-500">Python, Data Science</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <img src="https://i.pravatar.cc/40?img=5" className="rounded-full w-10 h-10" />
-              <div>
-                <div className="font-medium">Alex Johnson</div>
-                <div className="text-sm text-gray-500">UX Design, Figma</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <img src="https://i.pravatar.cc/40?img=7" className="rounded-full w-10 h-10" />
-              <div>
-                <div className="font-medium">Sarah Williams</div>
-                <div className="text-sm text-gray-500">Flutter, Dart</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Enrolled Courses */}
-      <div className="bg-white rounded-xl p-6 shadow">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="font-semibold text-lg">Enrolled Courses</h3>
-          <button className="text-violet-600 text-sm">Explore More</button>
-        </div>
-        <div className="grid md:grid-cols-3 gap-4">
-          <div className="border p-4 rounded-md">
-            <h4 className="font-semibold">React Fundamentals</h4>
-            <p className="text-sm text-gray-600">John Doe</p>
-            <span className="text-xs bg-gray-200 px-2 py-0.5 rounded-full mt-1 inline-block">Beginner</span>
-          </div>
-          <div className="border p-4 rounded-md">
-            <h4 className="font-semibold">UI/UX Design Principles</h4>
-            <p className="text-sm text-gray-600">Jane Smith</p>
-            <span className="text-xs bg-gray-200 px-2 py-0.5 rounded-full mt-1 inline-block">Intermediate</span>
-          </div>
-          <div className="border p-4 rounded-md">
-            <h4 className="font-semibold">Data Science Essentials</h4>
-            <p className="text-sm text-gray-600">Alex Johnson</p>
-            <span className="text-xs bg-gray-200 px-2 py-0.5 rounded-full mt-1 inline-block">Intermediate</span>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default ProfilePage;
