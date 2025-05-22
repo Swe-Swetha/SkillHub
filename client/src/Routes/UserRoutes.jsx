@@ -12,6 +12,8 @@ import Explore from "../User/Components/Dashboard/Explore";
 import Skillbucks from "../User/Components/Dashboard/Skillbucks";
 import ScheduleMeetingForm from "../User/Components/ScheduleMeetingForm";
 import MentorshipRequests from "../User/Components/MentorshipRequest";
+import TeachingDashboard from "../User/Components/TeachingDashboard";
+import LearningDashboard from "../User/Components/LearningDashboard";
 
 export default function UserRoutes() {
   return (
@@ -25,11 +27,12 @@ export default function UserRoutes() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/myBadges" element={<MyBadges />} />
-        <Route path="/skillbuck" element={<Skillbucks />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/viewMoreCourse" element={<MoreCourses />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/Others" element={<OthersProfile />} />
+        <Route path="/teaching" element={<TeachingDashboard />} />
+        <Route path="/learn" element={<LearningDashboard />} />
       </Routes>
     </BrowserRouter>
   );

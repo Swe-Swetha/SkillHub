@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import auth from "../assets/auth.jpeg";
+// import logo from "../assets/logo.png";
 
 function Login() {
     // const [formData, setFormData] = useState({ email: '', password: '' });
@@ -13,6 +14,9 @@ function Login() {
         case "login":
             formContent = (
                 <form className='mx-8 '>
+                    {/* <div className="flex items-center justify-center gap-1">
+                    <img src={logo} width={40} />
+                    <span className='text-xl font-bold'>SKILL HUB</span></div> */}
                     <input className='block w-full bg-gray-100 rounded-lg px-2 py-3 my-4 focus:outline-none focus:ring-0' type="email" placeholder='Email' required />
                     <input className='block w-full bg-gray-100 rounded-lg px-2 py-3 my-4 focus:outline-none focus:ring-0' type="password" placeholder='Password' required />
                     <button className='w-full bg-green-600 text-white rounded-lg py-3 my-2 text-center text-lg font-semibold' >Log In</button>
