@@ -23,10 +23,9 @@ const RegisterUser = async (registerData) => {
 
     //Creating new User
     try {
-        const data = await User(id, name, userName, email, hashedPwd)
-        return data
+        await User(id, name, userName, email, hashedPwd)
     } catch (err) {
-        console.log(err)
+        console.log("Error in Service " + err)
         throw err;
     }
 }
