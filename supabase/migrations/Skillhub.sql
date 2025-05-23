@@ -1,3 +1,4 @@
+use skillhub
 
 -- Create Users table
 CREATE TABLE Users (

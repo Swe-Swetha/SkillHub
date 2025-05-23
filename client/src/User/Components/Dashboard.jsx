@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
-import Explore from './Dashboard/Explore';
-import DashboardHeader from './Dashboard/DashboardHeader';
-import ConnectPage from './Dashboard/ConnectPage';
-import Blogs from './Dashboard/Blogs';
-import EarnBadge from './Dashboard/EarnBadge';
-import Leaderboard from './Dashboard/Leaderboard';
+import Explore from "./Dashboard/Explore";
+import DashboardHeader from "./Dashboard/DashboardHeader";
+import ConnectPage from "./Dashboard/ConnectPage";
+import Blogs from "./Dashboard/Blogs";
+import EarnBadge from "./Dashboard/EarnBadge";
+import Leaderboard from "./Dashboard/Leaderboard";
+import Skillbucks from "./Dashboard/Skillbucks";
 
 function Dashboard() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const tabFromUrl = searchParams.get('tab') || 'Explore';
+  const tabFromUrl = searchParams.get("tab") || "Explore";
   const [activeTab, setActiveTab] = useState(tabFromUrl);
 
   useEffect(() => {
-    const tab = searchParams.get('tab');
+    const tab = searchParams.get("tab");
     if (tab && tab !== activeTab) {
       setActiveTab(tab);
     }
@@ -26,28 +27,31 @@ function Dashboard() {
   };
 
   const tabComponents = {
-    "Explore": <Explore />,
-    "Connect": <ConnectPage />,
-    "Blogs": <Blogs />,
+    Explore: <Explore />,
+    Connect: <ConnectPage />,
+    Blogs: <Blogs />,
     "Earn Badge": <EarnBadge />,
-    "Leaderboard": <Leaderboard />
+    Leaderboard: <Leaderboard />,
+    Skillbucks: <Skillbucks isOpen={() => {}} />,
   };
 
-  const renderContent = () => tabComponents[activeTab] || (
-    <div className="text-center mt-10 text-xl text-gray-700">
-      Welcome to SkillHub!
-    </div>
-  );
+  const renderContent = () =>
+    tabComponents[activeTab] || (
+      <div className="text-center mt-10 text-xl text-gray-700">
+        Welcome to SkillHub!
+      </div>
+    );
 
   return (
     <div className="h-screen">
       <div className="h-[10%]">
-        <DashboardHeader activeTab={activeTab} handleTabClick={handleTabClick} />
+        <DashboardHeader
+          activeTab={activeTab}
+          handleTabClick={handleTabClick}
+        />
       </div>
 
-      <div className="h-[90%] pt-[15px]">
-        {renderContent()}
-      </div>
+      <div className="h-[90%] pt-[15px]">{renderContent()}</div>
     </div>
   );
 }
