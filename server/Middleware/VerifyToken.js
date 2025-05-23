@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY
 
-const VerifyToken = (req, res, next) => {
+const Protect = (req, res, next) => {
     const AuthHeader = req.headers["authorization"]
     const token = AuthHeader && AuthHeader.split(" ")[1]
 
@@ -15,4 +15,4 @@ const VerifyToken = (req, res, next) => {
         next();
     })
 }
-module.exports = { VerifyToken }
+module.exports = { Protect }
