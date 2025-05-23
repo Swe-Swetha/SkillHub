@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect, useMemo } from "react";
-import connect1 from "../../assets/connect1.avif";
-import connect2 from "../../assets/connect2.avif";
-import connect3 from "../../assets/connect3.avif";
-import connect4 from "../../assets/connect4.avif";
-import connect5 from "../../assets/connect5.avif";
-import connect6 from "../../assets/connect6.avif";
+import connect1 from "../../assets/connect1.png";
+import connect2 from "../../assets/connect2.png";
+import connect3 from "../../assets/connect3.png";
+import connect4 from "../../assets/connect4.png";
+import connect5 from "../../assets/connect5.png";
+import connect6 from "../../assets/connect6.png";
 import { useNavigate } from "react-router-dom";
 import { UserSearch, GraduationCap } from "lucide-react";
 

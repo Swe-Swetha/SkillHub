@@ -1,11 +1,11 @@
 
 import React from 'react';
 import HomeCards from '../../Pages/HomeCards';
-import explore from '../../assets/home1.JPG';
-import explore2 from '../../assets/home2.JPG';
+import explore1 from '../../assets/home1.png';
+import explore2 from '../../assets/home2.png';
 import card1 from "../../assets/Explore.avif";
 import card2 from "../../assets/Connect.avif";
-import card3 from "../../assets/Profile.avif";
+import card3 from "../../assets/ProfileSearch.png";
 import star from "../../assets/star.png";
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ function Explore() {
       <div>
         {/* Hero Section */}
         <div className="flex flex-col md:flex-row justify-between">
-          <img src={explore} width={440} alt="Explore" />
+          <img src={explore1} width={440} alt="Explore" />
           <div className="text-center md:text-left">
             <div className="mt-10 md:mt-32 font-semibold text-4xl">
               Collaborative Skill Sharing Hub
@@ -26,7 +26,7 @@ function Explore() {
             <div className="text-2xl mt-6 text-gray-500 text-center">
               Teach what you know - Learn what you love
             </div>
-            <div className="flex gap-1 items-center justify-center text-gray-400 mt-6 w-full border border-gray-400 rounded-md shadow-lg py-4 px-24">
+            <div className="flex gap-1 items-center justify-center text-gray-400 mt-6 w-full border-2 border-[#161179] rounded-md shadow-lg py-4 px-24">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
               </svg>
@@ -114,7 +114,7 @@ function Explore() {
                 />
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{card.title}</h3>
                 <p className="text-gray-600 mb-4">{card.text}</p>
-                <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition duration-200">
+                <button className="bg-[#161179] hover:bg-blue-950 text-white px-4 py-2 rounded-lg transition duration-200">
                   {card.btn}
                 </button>
               </div>
